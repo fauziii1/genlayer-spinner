@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="GenLayer Spinner">
+  <defs>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/><stop offset="55%" stop-color="#A855F7"/><stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <g class="spinner" style="transform-origin:60px 60px">
+    <circle cx="60" cy="60" r="43" fill="none" stroke="url(#glow)" stroke-width="5" stroke-linecap="round" stroke-dasharray="185 85" filter="url(#softGlow)"/>
+    <circle cx="60" cy="60" r="43" fill="none" stroke="#22D3EE" stroke-opacity=".28" stroke-width="2"/>
+    <circle class="orb" cx="60" cy="17" r="5.5" fill="#A855F7" filter="url(#softGlow)"/>
+  </g>
+  <g transform="translate(60 60)">
+    <path d="M0-25 L20-13 L20 9 L9 15 L9-5 L0-10 L-10-4 L-10 10 L0 16 L12 9 L12 20 L0 27 L-21 15 L-21-10 Z" fill="url(#glow)"/>
+    <path d="M0-10 L11-4 L11 7 L0 13 L-9 8 L-9 0 Z" fill="#F8FAFC"/>
+  </g>
+  <style>
+    .spinner { animation: spin 1.55s linear infinite; }
+    .orb { animation: pulse 1.55s ease-in-out infinite; transform-origin:60px 60px; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @keyframes pulse { 0%,100% { opacity:.55; transform:scale(.85); } 50% { opacity:1; transform:scale(1.18); } }
+    @media (prefers-reduced-motion: reduce) { .spinner,.orb { animation:none; } }
+  </style>
+</svg>
